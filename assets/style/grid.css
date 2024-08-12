@@ -1,0 +1,88 @@
+.banner{
+    display: grid;
+    gap: 1rem;
+}
+/* grid colum e row determina pos inicial e final 2 valores 1 valor inicial e 2 posição final */
+/* colunas cima a baixo para ver no projeto quantas tem */
+/* linhas contar a inicial e as demais ate final do grid */
+.banner img:nth-child(1){
+    grid-column: 1/3;
+}
+
+.banner img:nth-child(4){
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+/* Eventos */
+/* Usando a forma para posicionar corretamente os itens dentro do nosso grid */
+.eventos__item{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto repeat(2, 1fr)auto;
+    grid-template-areas: 
+    "imagem imagem"
+    "nome nome"
+    "data data"
+    "local botao";
+}
+
+.eventos__item img{
+    grid-area: imagem;
+}
+
+.eventos__item h3{
+    grid-area: nome;
+    align-self: center;
+}
+
+.eventos__item h4{
+    grid-area: data;
+}
+
+.eventos__item h5{
+    grid-area: local;
+    align-self: end;
+}
+
+.eventos__item button{
+    grid-area: botao;
+}
+
+.agenda__item {
+    display: grid;
+}
+
+.agenda__item img {
+    grid-column: 1/ 3;
+}
+
+.agenda__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.agenda__item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+}
+
+@media (min-width: 720px){
+    
+    .banner{
+        /* determinamos 50% 1 coluna e assim por diante */
+        grid-template-columns: calc(50% - 0.75rem) auto auto;
+        column-gap: 1.5rem;
+    }
+    
+    .banner img:nth-child(1){
+        grid-column: 1/2;
+        grid-row: 1/3;
+    }
+    
+    .banner img:nth-child(4){
+        grid-column: 3/4;
+        grid-row: 1/3;
+    }
+}
